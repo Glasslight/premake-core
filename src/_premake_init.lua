@@ -699,6 +699,12 @@
 	}
 
 	api.register {
+		name = "unitybuild",
+		scope = "config",
+		kind = "boolean"
+	}
+
+	api.register {
 		name = "bindirs",
 		scope = "config",
 		kind = "list:directory",

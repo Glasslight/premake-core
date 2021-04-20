@@ -196,6 +196,7 @@
 				m.wholeProgramOptimization,
 				m.nmakeOutDirs,
 				m.windowsSDKDesktopARMSupport,
+				m.unityBuild,
 			}
 		end
 	end
@@ -1690,6 +1691,15 @@
 		end
 		if value then
 			m.element("CLRSupport", nil, value)
+		end
+	end
+
+
+	function m.unityBuild(cfg)
+		local unitybuild = cfg.unitybuild
+
+		if _ACTION >= "vs2019" and unitybuild then
+			m.element("EnableUnitySupport", nil, "true")
 		end
 	end
 
