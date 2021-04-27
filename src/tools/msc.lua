@@ -234,11 +234,11 @@
 -- Decorate include file search paths for the MSVC command line.
 --
 
-	function msc.getincludedirs(cfg, dirs, sysdirs, isabsolute)
+	function msc.getincludedirs(cfg, dirs, sysdirs)
 		local result = {}
 		dirs = table.join(dirs, sysdirs)
 		for _, dir in ipairs(dirs) do
-			dir = isabsolute and dir or project.getrelative(cfg.project, dir)
+			dir = project.getrelative(cfg.project, dir)
 			table.insert(result, '-I' ..  p.quoted(dir))
 		end
 		return result
@@ -323,14 +323,6 @@
 	end
 
 --
--- Return the extension for object files
---
-
-function msc.getObjectFileExtension()
-	return "obj"
-end
-
---
 -- Return the list of libraries to link, decorated with flags as needed.
 --
 
@@ -381,7 +373,7 @@ end
 --
 
 	function msc.gettoolname(cfg, tool)
-		return "cl.exe"
+		return nil
 	end
 
 

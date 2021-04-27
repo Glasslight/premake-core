@@ -284,14 +284,14 @@
 -- Decorate include file search paths for the GCC command line.
 --
 
-	function gcc.getincludedirs(cfg, dirs, sysdirs, isabsolute)
+	function gcc.getincludedirs(cfg, dirs, sysdirs)
 		local result = {}
 		for _, dir in ipairs(dirs) do
-			dir = isabsolute and dir or project.getrelative(cfg.project, dir)
+			dir = project.getrelative(cfg.project, dir)
 			table.insert(result, '-I' .. p.quoted(dir))
 		end
 		for _, dir in ipairs(sysdirs or {}) do
-			dir = isabsolute and dir or project.getrelative(cfg.project, dir)
+			dir = project.getrelative(cfg.project, dir)
 			table.insert(result, '-isystem ' .. p.quoted(dir))
 		end
 		return result
@@ -462,13 +462,7 @@
 		return flags
 	end
 
---
--- Return the extension for object files
---
 
-	function gcc.getObjectFileExtension()
-		return "o"
-	end
 
 --
 -- Return the list of libraries to link, decorated with flags as needed.

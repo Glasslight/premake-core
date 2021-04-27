@@ -109,7 +109,6 @@
 	snc.getincludedirs = gcc.getincludedirs
 	snc.getrunpathdirs = gcc.getrunpathdirs
 	snc.getLibraryDirectories = gcc.getLibraryDirectories
-	snc.getObjectFileExtension = gcc.getObjectFileExtension
 	snc.getlinks = gcc.getlinks
 
 
