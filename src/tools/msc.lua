@@ -319,6 +319,7 @@
 		return {
 			["lib"] = true,
 			["obj"] = true,
+			["a"] = true,
 		}
 	end
 
@@ -372,8 +373,20 @@
 --    default value should be used.
 --
 
+	msc.tools = {
+		cc = "cl.exe",
+		cxx = "cl.exe",
+		ar = "lib.exe",
+		link = "link.exe"
+	}
+
 	function msc.gettoolname(cfg, tool)
-		return nil
+		return msc.tools[tool]
+	end
+
+
+	function msc.getname()
+		return "msc"
 	end
 
 

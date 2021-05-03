@@ -583,3 +583,8 @@
 		end
 		return nil
 	end
+
+
+	function gcc.getname()
+		return "gcc"
+	end

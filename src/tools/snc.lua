@@ -142,3 +142,8 @@
 		local names = snc.tools[cfg.architecture] or snc.tools[cfg.system] or {}
 		return names[tool]
 	end
+
+
+	function snc.getname()
+		return "snc"
+	end

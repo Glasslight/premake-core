@@ -990,6 +990,12 @@
 	}
 
 	api.register {
+		name = "responsefile",
+		scope = "project",
+		kind = "boolean",
+	}
+
+	api.register {
 		name = "postbuildcommands",
 		scope = "config",
 		kind = "list:string",
@@ -1708,6 +1714,7 @@
 		value       = "VALUE",
 		description = "Choose a C/C++ compiler set",
 		allowed = {
+			{ "msc", "Microsoft Visual C++ (msc)" },
 			{ "clang", "Clang (clang)" },
 			{ "gcc", "GNU GCC (gcc/g++)" },
 			{ "mingw", "MinGW GCC (gcc/g++)" },

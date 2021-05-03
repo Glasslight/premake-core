@@ -324,7 +324,8 @@
 	clang.tools = {
 		cc = "clang",
 		cxx = "clang++",
-		ar = function(cfg) return iif(cfg.flags.LinkTimeOptimization, "llvm-ar", "ar") end
+		ar = "llvm-ar",
+		link = "lld-link"
 	}
 
 	function clang.gettoolname(cfg, tool)
@@ -333,4 +334,9 @@
 			value = value(cfg)
 		end
 		return value
+	end
+
+
+	function clang.getname()
+		return "clang"
 	end
