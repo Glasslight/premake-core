@@ -63,6 +63,7 @@ static const luaL_Reg os_functions[] = {
 	{ "chmod",                  os_chmod                },
 	{ "comparefiles",           os_comparefiles         },
 	{ "copyfile",               os_copyfile             },
+	{ "copydir",                os_copydir              },
 	{ "_is64bit",               os_is64bit              },
 	{ "isdir",                  os_isdir                },
 	{ "getcwd",                 os_getcwd               },
